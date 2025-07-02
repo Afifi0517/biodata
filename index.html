@@ -5,40 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Muhammad Afifi - Computer Engineering Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0066cc;
-            --primary-dark: #004080;
-            --secondary: #00a2ff;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light: #f8f9fa;
-            --gray: #2d2d2d;
-            --light-gray: #444;
+            --primary-color: #740001;
+            --secondary-color: #d3a625;
+            --background-color: #f5e8c0;
+            --text-color: #2c2c2c;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: var(--dark);
-            color: var(--light);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Cormorant', serif;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
-        a {
-            text-decoration: none;
-            color: var(--secondary);
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--primary);
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
         }
         
         .container {
@@ -49,29 +40,24 @@
         
         /* Header */
         header {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: var(--primary-color);
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
         
         .logo {
             font-size: 24px;
+            color: var(--secondary-color);
             font-weight: 700;
-            color: var(--light);
-        }
-        
-        .logo span {
-            color: var(--primary);
         }
         
         .nav-links {
@@ -80,33 +66,17 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 20px;
         }
         
         .nav-links a {
-            color: var(--light);
-            font-weight: 500;
-            position: relative;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s;
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
+        .nav-links a:hover {
+            text-decoration: underline;
         }
         
         /* Hero Section */
@@ -115,146 +85,111 @@
             display: flex;
             align-items: center;
             padding-top: 80px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
         }
         
         .hero-content {
+            position: relative;
+            z-index: 1;
             max-width: 800px;
-            animation: fadeInUp 1s ease;
+            background-color: rgba(245, 232, 192, 0.85);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid var(--secondary-color);
         }
         
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            color: var(--primary);
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 2.5rem;
         }
         
         .hero h2 {
-            font-size: 24px;
-            color: var(--secondary);
-            margin-bottom: 30px;
-            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
         
         .hero p {
             margin-bottom: 30px;
-            font-size: 18px;
+            font-size: 1.1rem;
         }
         
         .btn {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: all 0.3s;
+            border: 1px solid var(--secondary-color);
         }
         
         .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: var(--secondary-color);
+            color: var(--primary-color);
         }
         
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-        }
-        
-        /* About Section */
+        /* Sections */
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
+            background-color: rgba(245, 232, 192, 0.9);
+            margin: 30px 0;
+            border-radius: 10px;
+            border: 2px solid var(--secondary-color);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         
         .section-title h2 {
-            font-size: 36px;
+            color: var(--primary-color);
+            font-size: 2rem;
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 70px;
+            width: 60%;
             height: 3px;
-            background: var(--primary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            background: var(--secondary-color);
+            bottom: -10px;
+            left: 20%;
         }
         
+        /* About Section */
         .about-content {
             display: flex;
+            gap: 40px;
             align-items: center;
-            gap: 50px;
-        }
-        
-        .about-img {
-            flex: 1;
-            position: relative;
-            animation: fadeInLeft 1s ease;
         }
         
         .about-img img {
             width: 100%;
-            max-width: 400px;
+            max-width: 350px;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 5px solid var(--gray);
-        }
-        
-        .about-text {
-            flex: 1;
-            animation: fadeInRight 1s ease;
-        }
-        
-        .about-text h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-        }
-        
-        .info-list {
-            margin-top: 30px;
+            border: 3px solid var(--secondary-color);
         }
         
         .info-list li {
-            margin-bottom: 15px;
-            display: flex;
+            margin-bottom: 10px;
+            list-style-type: none;
         }
         
         .info-list strong {
-            min-width: 120px;
             display: inline-block;
-            color: var(--secondary);
+            width: 120px;
+            color: var(--primary-color);
         }
         
-        /* Education Section */
-        .education {
-            background-color: var(--darker);
-        }
-        
+        /* Timeline */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -265,7 +200,7 @@
             content: '';
             position: absolute;
             width: 3px;
-            background: var(--primary);
+            background: var(--primary-color);
             top: 0;
             bottom: 0;
             left: 50%;
@@ -276,21 +211,15 @@
             padding: 10px 40px;
             position: relative;
             width: 50%;
-            animation: fadeInUp 0.5s ease;
-            opacity: 0;
-            animation-fill-mode: forwards;
         }
-        
-        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
         
         .timeline-item::after {
             content: '';
             position: absolute;
             width: 20px;
             height: 20px;
-            background: var(--primary);
+            background: var(--secondary-color);
+            border: 3px solid var(--primary-color);
             border-radius: 50%;
             top: 15px;
             z-index: 1;
@@ -314,315 +243,80 @@
         
         .timeline-content {
             padding: 20px;
-            background: var(--gray);
+            background: var(--background-color);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--secondary-color);
         }
         
-        .timeline-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .timeline-content h4 {
-            margin-bottom: 10px;
-            color: var(--secondary);
-        }
-        
-        .timeline-content p {
-            font-size: 14px;
-        }
-        
-        /* Experience Section */
-        .experience-item {
-            background: var(--gray);
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            animation: fadeInUp 0.5s ease;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .experience-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .experience-item:nth-child(1) { animation-delay: 0.2s; }
-        .experience-item:nth-child(2) { animation-delay: 0.4s; }
-        .experience-item:nth-child(3) { animation-delay: 0.6s; }
-        .experience-item:nth-child(4) { animation-delay: 0.8s; }
-        
-        .experience-item h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .experience-item h4 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-        
-        .experience-item .date {
-            display: inline-block;
-            background: var(--primary-dark);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .experience-item ul {
-            padding-left: 20px;
-        }
-        
-        .experience-item li {
-            margin-bottom: 10px;
-        }
-        
-        /* Publications Section */
-        .publications {
-            background-color: var(--darker);
-        }
-        
-        .publication-item {
-            background: var(--gray);
+        /* Experience & Publications */
+        .item-card {
+            background: var(--background-color);
             padding: 20px;
-            border-radius: 10px;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
-            animation: fadeInUp 0.5s ease;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
         }
         
-        .publication-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .publication-item:nth-child(1) { animation-delay: 0.2s; }
-        .publication-item:nth-child(2) { animation-delay: 0.4s; }
-        .publication-item:nth-child(3) { animation-delay: 0.6s; }
-        
-        .publication-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .publication-item p {
-            font-size: 14px;
+        .item-card h3 {
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
         
-        .publication-item a {
-            display: inline-block;
-            margin-top: 10px;
-        }
-        
-        /* Awards Section */
+        /* Awards Grid */
         .awards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
         
         .award-item {
-            background: var(--gray);
-            padding: 25px;
+            background: var(--background-color);
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            animation: fadeInUp 0.5s ease;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            border: 1px solid var(--secondary-color);
+            transition: transform 0.3s;
         }
-        
+
         .award-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .award-item:nth-child(1) { animation-delay: 0.2s; }
-        .award-item:nth-child(2) { animation-delay: 0.4s; }
-        .award-item:nth-child(3) { animation-delay: 0.6s; }
-        .award-item:nth-child(4) { animation-delay: 0.8s; }
-        .award-item:nth-child(5) { animation-delay: 1s; }
-        .award-item:nth-child(6) { animation-delay: 1.2s; }
-        
-        .award-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .award-item p {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        
-        .award-item .date {
-            color: var(--secondary);
-            font-size: 14px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--darker);
-        }
-        
+        /* Contact */
         .contact-info {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
         }
         
         .contact-item {
             flex: 1;
             min-width: 250px;
-            background: var(--gray);
-            padding: 30px;
-            border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s ease;
-            animation: fadeInUp 0.5s ease;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .contact-item:nth-child(1) { animation-delay: 0.2s; }
-        .contact-item:nth-child(2) { animation-delay: 0.4s; }
-        .contact-item:nth-child(3) { animation-delay: 0.6s; }
-        
-        .contact-item:hover {
-            transform: translateY(-10px);
+            padding: 20px;
+            background: var(--background-color);
+            border-radius: 10px;
+            border: 1px solid var(--secondary-color);
         }
         
         .contact-item i {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .contact-item h3 {
-            margin-bottom: 15px;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
         }
         
         /* Footer */
         footer {
-            background-color: var(--darker);
-            padding: 30px 0;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
             text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--gray);
-            border-radius: 50%;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-        }
-        
-        .social-links i {
-            font-size: 20px;
-            color: var(--light);
-        }
-        
-        .copyright {
-            font-size: 14px;
-            color: var(--light-gray);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            padding: 20px 0;
+            margin-top: 50px;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--darker);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 50px;
-                transition: all 0.5s ease;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hamburger {
-                display: block;
-                color: var(--light);
-                font-size: 24px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero h2 {
-                font-size: 20px;
-            }
-            
             .about-content {
                 flex-direction: column;
             }
@@ -656,7 +350,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Dr. <span>Afifi</span></div>
+                <div class="logo">Dr. Afifi</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -666,9 +360,6 @@
                     <li><a href="#awards">Awards</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
@@ -678,11 +369,11 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Dr. Muhammad Afifi Bin Mohd Shukri</h1>
-                <h2>PhD in Computer Engineering | AI & Deep Learning Specialist</h2>
-                <p>PhD candidate in Artificial Intelligence with a strong background in deep learning, publications, and conference presentations. Experienced in AI development using Intel FPGA platforms and Altera tools, with a focus on hardware optimization and embedded AI applications.</p>
+                <h2>PhD in Computer Engineering | AI Specialist</h2>
+                <p>PhD candidate in Artificial Intelligence with a strong background in deep learning, publications, and conference presentations. Experienced in AI development using Intel FPGA platforms and Altera tools.</p>
                 <div>
                     <a href="#contact" class="btn">Contact Me</a>
-                    <a href="#about" class="btn btn-outline">Learn More</a>
+                    <a href="#about" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -696,21 +387,19 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Replace with your image -->
-                    <img src="WhatsApp Image 2025-07-02 at 14.09.13_b0d365ba.jpg" alt="Dr. Muhammad Afifi">
+                    <img src="WhatsApp Image 2025-07-02 at 17.37.44_d2374e91.jpg" alt="Dr. Muhammad Afifi Bin Mohd Shukri">
                 </div>
                 <div class="about-text">
                     <h3>Professional Summary</h3>
-                    <p>Passionate about teaching, student mentorship, and curriculum development. Technical expertise spans Analog CMOS, Power Electronics, Power Systems, Digital Electronics, and Digital Signal Processing. Committed to bridging academic research with real-world innovation and inspiring future technology leaders.</p>
+                    <p>PhD candidate in Artificial Intelligence with a strong background in deep learning, publications, and conference presentations. Experienced in AI development using Intel FPGA platforms and Altera tools, with a focus on hardware optimization and embedded AI applications.</p>
                     
-                    <h3 style="margin-top: 30px;">Research Interests</h3>
-                    <p>Artificial Intelligence, Analog CMOS, Power Electronics, Power System, Digital Electronics, Digital Signal Processing, Mobile and Wireless Communication, Optical Communication System, Digital Electronics</p>
+                    <h3 style="margin-top: 20px;">Research Interests</h3>
+                    <p>Artificial Intelligence, Analog CMOS, Power Electronics, Power Systems, Digital Electronics, Digital Signal Processing, Mobile and Wireless Communication, Optical Communication System</p>
                     
                     <ul class="info-list">
                         <li><strong>Address:</strong> No.83 Lorong 3/2 Lembah Impiana, 09000 Kulim, Kedah</li>
                         <li><strong>Phone:</strong> 014-3561062</li>
                         <li><strong>Email:</strong> affif0517@gmail.com</li>
-                        <li><strong>BEM Registration:</strong> T17504 (Engineering Technologist Member since 2019)</li>
                     </ul>
                 </div>
             </div>
@@ -718,32 +407,73 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="section education">
+    <section id="education" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Education</h2>
             </div>
             <div class="timeline">
+                <!-- Tertiary Education -->
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>Doctor of Philosophy (Computer Engineering)</h3>
-                        <h4>Universiti Malaysia Perlis, Perlis, Malaysia</h4>
-                        <p>Thesis Title: Deep Learning-based Ambient Backscatter Wave Communication System for Human Activity Recognition</p>
+                        <p>Universiti Malaysia Perlis, Perlis, Malaysia</p>
+                        <p>Thesis: Deep Learning-based Ambient Backscatter Wave Communication System for Human Activity Recognition</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="timeline-content">
                         <h3>Master of Science (Electrical & Electronic Engineering)</h3>
-                        <h4>Universiti Malaysia Perlis, Perlis, Malaysia</h4>
+                        <p>Universiti Malaysia Perlis, Perlis, Malaysia</p>
                         <p>2019 - 2020</p>
-                        <p>Thesis Title: Design and Development of an IoT Based Air Pollution Monitoring System Using Mobile Phone</p>
+                        <p>Thesis: Design and Development of an IoT Based Air Pollution Monitoring System Using Mobile Phone</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>Bachelor of Electronic Engineering Technology (Medical Electronics)</h3>
-                        <h4>Universiti Kuala Lumpur British Malaysian Institute (UNIKL BMI), Gombak, Malaysia</h4>
+                        <p>Universiti Kuala Lumpur British Malaysian Institute (UNIKL BMI), Gombak, Malaysia</p>
                         <p>2016 - 2018</p>
+                        <p>CGPA: 3.68 (First Class Honors)</p>
+                    </div>
+                </div>
+                
+                <!-- Pre-University Education -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Diploma in Electronic Engineering Technology (Medical Electronics)</h3>
+                        <p>Universiti Kuala Lumpur British Malaysian Institute (UNIKL BMI), Gombak, Malaysia</p>
+                        <p>2014 - 2016</p>
+                        <p>CGPA: 3.79 (Platinum Award)</p>
+                    </div>
+                </div>
+                
+                <!-- Secondary Education -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                        <p>Sekolah Menengah Kebangsaan Sultan Badlishah, Kulim, Kedah</p>
+                        <p>2013</p>
+                        <p>Results: 8A 1B (Science Stream)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Penilaian Menengah Rendah (PMR)</h3>
+                        <p>Sekolah Menengah Kebangsaan Sultan Badlishah, Kulim, Kedah</p>
+                        <p>2011</p>
+                        <p>Results: 8A (Excellent)</p>
+                    </div>
+                </div>
+                
+                <!-- Primary Education -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Ujian Pencapaian Sekolah Rendah (UPSR)</h3>
+                        <p>Sekolah Kebangsaan Tunku Putra, Kulim, Kedah</p>
+                        <p>2008</p>
+                        <p>Results: 5A (Excellent)</p>
                     </div>
                 </div>
             </div>
@@ -754,71 +484,57 @@
     <section id="experience" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Research & Work Experience</h2>
+                <h2>Experience</h2>
             </div>
-            <div class="experience-item">
-                <h3>Graduate Research Assistant (GRA)</h3>
-                <h4>Universiti Malaysia Perlis</h4>
-                <div class="date">2020 - Present</div>
+            <div class="item-card">
+                <h3>Graduate Research Assistant</h3>
+                <p>Universiti Malaysia Perlis</p>
+                <p>Main Supervisor: Assoc. Prof. Ts. Dr. Amiza Amir</p>
                 <ul>
-                    <li>Main Supervisor: Assoc. Prof. Ts. Dr. Amiza Amir</li>
-                    <li>Designed and trained advanced deep learning models (e.g., ResNet50, VGG16, MobileNetV2, InceptionV3) for healthcare-focused image classification and human activity recognition (HAR).</li>
-                    <li>Designed custom multilayer PCBs using Altium Designer, including schematic capture, component placement, signal integrity analysis, and layout optimization.</li>
+                    <li>Designed and trained advanced deep learning models (e.g., ResNet50, VGG16, MobileNetV2, InceptionV3) for healthcare-focused image classification and human activity recognition (HAR)</li>
+                    <li>Designed custom multilayer PCBs using Altium Designer, including schematic capture, component placement, signal integrity analysis, and layout optimization</li>
                 </ul>
             </div>
-            <div class="experience-item">
+            <div class="item-card">
                 <h3>Altera – Postgraduate Internship</h3>
-                <h4>August–October 2024</h4>
-                <div class="date">2024</div>
+                <p>August–October 2024</p>
+                <p>Main Supervisor: Ts. Dr. Fazrul Faiz Zakaria</p>
                 <ul>
-                    <li>Main Supervisor: Ts. Dr. Fazrul Faiz Zakaria</li>
-                    <li>Developed and fine-tuned U-Net and Attention ResUNet segmentation models for precise breast cancer detection using BUSI images.</li>
-                    <li>Implemented AI algorithms on FPGA interfaces, enabling efficient real-time inference for medical imaging tasks.</li>
-                    <li>Analyzed performance on FPGA and CPU platforms, comparing latency and throughput to optimize detection speed and accuracy.</li>
+                    <li>Developed and fine-tuned U-Net and Attention ResUNet segmentation models for precise breast cancer detection using BUSI images</li>
+                    <li>Implemented AI algorithms on FPGA interfaces, enabling efficient real-time inference for medical imaging tasks</li>
                 </ul>
             </div>
-            <div class="experience-item">
+            <div class="item-card">
                 <h3>Intel – Postgraduate Internship</h3>
-                <h4>April–October 2023</h4>
-                <div class="date">2023</div>
+                <p>April–October 2023</p>
+                <p>Main Supervisor: Aditi Gupta</p>
                 <ul>
-                    <li>Main Supervisor: Aditi Gupta</li>
-                    <li>Developed and fine-tuned ResNet50 and EfficientNetB0-B7 models for high-accuracy breast cancer detection using BUSI dataset.</li>
-                    <li>Performed advanced data augmentation on the BUSI dataset to improve model robustness for benign and malignant classification.</li>
-                    <li>Designed and implemented deep learning pipelines on Kaggle for breast cancer classification.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Final Year Project (FYP)</h3>
-                <h4>Universiti Malaysia Perlis</h4>
-                <div class="date">2019 - 2020</div>
-                <ul>
-                    <li>Main Supervisor: Shah Rizalili Mukhtar</li>
-                    <li>Designed and developed a working prototype of an air pollution monitoring system capable of detecting harmful gases and particulates in the environment, with a built-in real-time alert system for safety notifications.</li>
+                    <li>Developed and fine-tuned ResNet50 and EfficientNetB0-B7 models for high-accuracy breast cancer detection using BUSI dataset</li>
+                    <li>Performed advanced data augmentation on the BUSI dataset to improve model robustness for benign and malignant classification</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="section publications">
+    <section id="publications" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Publications</h2>
             </div>
-            <div class="publication-item">
+            <div class="item-card">
                 <h3>ABCS antenna for wireless body area network at 26 GHz</h3>
-                <p>Affif, M., Azemi, S. N., Amir, A., & Jack, S. P. (2023). AIP Conference Proceedings, 2746, 020022.</p>
-                <a href="https://doi.org/10.1063/5.0167687" class="btn" target="_blank">View Publication</a>
+                <p>AIP Conference Proceedings, 2746, 020022 (2023)</p>
+                <p>DOI: <a href="https://doi.org/10.1063/5.0167687" target="_blank">10.1063/5.0167687</a></p>
             </div>
-            <div class="publication-item">
+            <div class="item-card">
                 <h3>Design of Four-Port Antenna for Human Activity Recognition in Ambient Backscatter Communications Systems at 433 MHz</h3>
-                <p>Affif, M., Azemi, S.N., Amir, A., Soh, P.J., Isa, C.M.N.C. and Ahmad, Z.A., 2024, September. In International Conference on Electronic Design (pp. 167-175). Cham: Springer Nature Switzerland.</p>
-                <a href="https://doi.org/10.1007/978-3-031-78918-2_15" class="btn" target="_blank">View Publication</a>
+                <p>International Conference on Electronic Design, pp. 167-175 (2024)</p>
+                <p>DOI: <a href="https://doi.org/10.1007/978-3-031-78918-2_15" target="_blank">10.1007/978-3-031-78918-2_15</a></p>
             </div>
-            <div class="publication-item">
-                <h3>Optimized U-Net and Attention ResU-Net Models for Early Breast Cancer Detection: A Medical Imaging Use Case Exploration with Intel FPGA AI Suites</h3>
-                <p>Muhammad Affif, Fazrul Faiz Zakaria, Amiza Amir, Kamarul Zaman Abdul Rashid, Patrick Daniel, (2024). Accepted and waiting to be published in SCOPUS index journal/proceeding.</p>
+            <div class="item-card">
+                <h3>Optimized U-Net and Attention ResU-Net Models for Early Breast Cancer Detection: a Medical Imaging Use Case Exploration with Intel FPGA AI Suites</h3>
+                <p>Accepted and waiting to be published in SCOPUS index journal/proceeding (2024)</p>
             </div>
         </div>
     </section>
@@ -830,72 +546,91 @@
                 <h2>Awards & Honors</h2>
             </div>
             <div class="awards-grid">
+                <!-- Academic Awards -->
                 <div class="award-item">
                     <h3>Best Paper Award</h3>
                     <p>7th International Conference on Electronic Design (ICED) 2024</p>
-                    <p class="date">2024</p>
+                    <p>Paper: Design and Optimization of a Four-Port Transmitter Antenna for Human Activity Recognition</p>
                 </div>
+                
                 <div class="award-item">
                     <h3>Silver Award</h3>
                     <p>International Eureka Innovation Exhibition/i-EIE 2018</p>
-                    <p class="date">2018</p>
+                    <p>Project: Near Real-Time Detection of Carbon Dioxide and Humidity via IoT</p>
                 </div>
+                
                 <div class="award-item">
                     <h3>APMTTEMC Student Volunteer Award</h3>
-                    <p>Active participation and role as the secretariat for chapter conference</p>
-                    <p class="date">2023-2024</p>
+                    <p>2023-2024</p>
+                    <p>For active participation as secretariat for chapter conference</p>
                 </div>
+                
                 <div class="award-item">
-                    <h3>Malaysia Productivity Corporation (Productivity Champion)</h3>
-                    <p>Category: Talent - A rising talent with high contributions towards productivity improvement in organisation</p>
-                    <p class="date">2024</p>
+                    <h3>Productivity Champion</h3>
+                    <p>Malaysia Productivity Corporation</p>
+                    <p>Category: Talent - Recognized for contributions to productivity improvement</p>
                 </div>
+                
+                <!-- Thesis Competition Awards -->
                 <div class="award-item">
-                    <h3>3rd place in Three-Minutes Thesis Competition (FTKEN Level) UniMAP 2025</h3>
-                    <p>Project Title: Deep Learning-based Ambient Backscatter Wave Communication System for Human Activity Recognition</p>
-                    <p class="date">2025</p>
+                    <h3>3rd Place - Three Minute Thesis</h3>
+                    <p>FTKEN Level, UniMAP 2025</p>
+                    <p>Project: Deep Learning-based Ambient Backscatter Wave Communication System</p>
                 </div>
+                
                 <div class="award-item">
-                    <h3>2rd place in Three-Minutes Thesis Competition (UNIMAP Level) UniMAP 2025</h3>
-                    <p>Project Title: Deep Learning-based Ambient Backscatter Wave Communication System for Human Activity Recognition</p>
-                    <p class="date">2025</p>
+                    <h3>2nd Place - Three Minute Thesis</h3>
+                    <p>UniMAP Level, UniMAP 2025</p>
+                    <p>Project: Deep Learning-based Ambient Backscatter Wave Communication System</p>
                 </div>
+                
                 <div class="award-item">
-                    <h3>Public Speaking Winners UniKL BMI 2017</h3>
-                    <p>Project Title: Near Real-Time Detection of Carbon Dioxide and Humidity via IoT</p>
-                    <p class="date">2017</p>
+                    <h3>Semi-finalist - Three Minute Thesis</h3>
+                    <p>National Level 2025</p>
+                    <p>Project: Deep Learning-based Ambient Backscatter Wave Communication System</p>
                 </div>
+                
+                <!-- Public Speaking -->
                 <div class="award-item">
-                    <h3>Gold Award Mini iFuture 2025 Postgraduate Research Poster Competition</h3>
-                    <p>Level: Postgraduate Faculty UniMAP</p>
-                    <p class="date">2025</p>
+                    <h3>Public Speaking Winner</h3>
+                    <p>UniKL BMI 2017</p>
+                    <p>Project: Near Real-Time Detection of Carbon Dioxide and Humidity via IoT</p>
                 </div>
+                
+                <!-- Research Competitions -->
                 <div class="award-item">
-                    <h3>Platinum Award of Diploma Kejuruteraan Elektronik Bioperubatan (Radiologi dan Pengimejan)</h3>
+                    <h3>Gold Award</h3>
+                    <p>Mini iFuture 2025 Postgraduate Research Poster Competition</p>
+                    <p>Faculty Level, UniMAP</p>
+                </div>
+                
+                <!-- Academic Excellence -->
+                <div class="award-item">
+                    <h3>Platinum Award</h3>
+                    <p>Diploma Kejuruteraan Elektronik Bioperubatan (Radiologi dan Pengimejan)</p>
                     <p>CGPA: 3.79</p>
                 </div>
+                
                 <div class="award-item">
-                    <h3>First Class Graduated Bachelor of Electronic Engineering Technology (Medical Electronics) with Honours</h3>
+                    <h3>First Class Honors</h3>
+                    <p>Bachelor of Electronic Engineering Technology (Medical Electronics)</p>
                     <p>CGPA: 3.68</p>
                 </div>
+                
                 <div class="award-item">
-                    <h3>Top Student Award Master of Science (Electrical and Electronic Engineering) Coursework</h3>
+                    <h3>Top Student Award</h3>
+                    <p>Master of Science (Electrical and Electronic Engineering) Coursework</p>
                     <p>CGPA: 3.79</p>
-                </div>
-                <div class="award-item">
-                    <h3>Semi-finalist in Three-Minutes Thesis Competition (National Level) 2025</h3>
-                    <p>Project Title: Deep Learning-based Ambient Backscatter Wave Communication System for Human Activity Recognition</p>
-                    <p class="date">2025</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Me</h2>
+                <h2>Contact</h2>
             </div>
             <div class="contact-info">
                 <div class="contact-item">
@@ -914,22 +649,22 @@
                     <p>affif0517@gmail.com</p>
                 </div>
             </div>
-            <div style="margin-top: 50px; text-align: center;">
+            <div style="margin-top: 40px; text-align: center;">
                 <h3>References</h3>
-                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px;">
-                    <div style="background: var(--gray); padding: 20px; border-radius: 10px; max-width: 400px;">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">Assoc. Prof. Ts. Dr. Amiza Amir</h4>
-                        <p>Associate Professor<br>
-                        Faculty of Electronic Engineering & Technology<br>
-                        Phone: 013-4288966<br>
-                        Email: amizaamir@unimap.edu.my</p>
+                <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap;">
+                    <div style="text-align: left;">
+                        <p><strong>Assoc. Prof. Ts. Dr. Amiza Amir</strong></p>
+                        <p>Associate Professor</p>
+                        <p>Faculty of Electronic Engineering & Technology</p>
+                        <p>Phone: 013-4288966</p>
+                        <p>Email: amizaamir@unimap.edu.my</p>
                     </div>
-                    <div style="background: var(--gray); padding: 20px; border-radius: 10px; max-width: 400px;">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">Assoc. Prof. Ir. Ts. Dr. Saidatul Noriyana Azemi</h4>
-                        <p>Associate Professor<br>
-                        Faculty of Electronic Engineering & Technology<br>
-                        Phone: 012-5104805<br>
-                        Email: snoriyana@unimap.edu.my</p>
+                    <div style="text-align: left;">
+                        <p><strong>Assoc. Prof. Ir. Ts. Dr. Saidatul Noriyana Azemi</strong></p>
+                        <p>Associate Professor</p>
+                        <p>Faculty of Electronic Engineering & Technology</p>
+                        <p>Phone: 012-5104805</p>
+                        <p>Email: snoriyana@unimap.edu.my</p>
                     </div>
                 </div>
             </div>
@@ -939,40 +674,17 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-researchgate"></i></a>
-            </div>
-            <p class="copyright">© 2024 Dr. Muhammad Afifi Bin Mohd Shukri. All Rights Reserved.</p>
+            <p>© 2024 Dr. Muhammad Afifi Bin Mohd Shukri</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -981,23 +693,6 @@
                 }
             });
         });
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.timeline-item, .experience-item, .publication-item, .award-item, .contact-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.style.animationPlayState = 'running';
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
